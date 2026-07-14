@@ -19,8 +19,8 @@ The robot is capable of:
 
 ## Hardware
 
-- Raspberry Pi
-- ESP32
+- Raspberry Pi 5
+- ESP32 DDSM Driver Hat(A) Board 
 - 4 × DDSM210 Smart Motors
 - YDLIDAR X2
 - MPU6500 IMU
@@ -45,9 +45,28 @@ src/
 ├── ddsm_nav_driver/
 ├── imu_driver/
 ├── turtlebot_localization/
+├── firmware/
+│   └── esp32_motor_controller/
+└── images/
+
 ```
 
 ---
+
+## ESP32 Motor Controller
+
+The ESP32 firmware responsible for controlling the four DDSM210 smart motors is located in:
+
+```text
+firmware/esp32_motor_controller/
+```
+
+The firmware:
+
+- Receives `linear,angular` velocity commands over USB Serial.
+- Converts the commanded robot velocity into left and right wheel speeds using differential drive kinematics.
+- Converts wheel speeds to motor RPM.
+- Sends UART commands to all four DDSM210 smart motors.
 
 ## External Packages
 
