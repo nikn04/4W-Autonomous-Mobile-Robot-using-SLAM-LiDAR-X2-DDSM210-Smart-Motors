@@ -1,0 +1,20 @@
+# ROS/colcon build artifacts
+**/build/
+**/install/
+**/log/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*~
+
+# Third-party packages
+rf2o_laser_odometry/
+ydlidar_ros2_driver/
